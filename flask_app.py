@@ -1,4 +1,7 @@
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from os import environ
 from flask import Flask, Response, jsonify, request
@@ -8,7 +11,8 @@ import os
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
-app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('SQLALCHEMY_DATABASE_URI')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.secret_key = 'secreat key'
