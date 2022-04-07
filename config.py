@@ -1,6 +1,9 @@
 from os import environ
 import os
-import flask_app
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class Config(object):
