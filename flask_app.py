@@ -6,6 +6,7 @@ load_dotenv()
 from os import environ
 from flask import Flask, Response, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
+
 from sqlalchemy.exc import IntegrityError
 import os
 
